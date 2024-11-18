@@ -3,9 +3,8 @@ import { commonIcon } from "../../../asset";
 import { useSelector, useDispatch } from "react-redux";
 import React, { useRef, useEffect, Fragment } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import { getChat } from "../../../store/chat-action";
+import {getChat} from "../../../store/chat-action";
 import ReplyByGemini from "./ReplyByGemini";
-import CopyBtn from "../../Ui/CopyBtn";
 import "./ScrollChatModule.css";
 
 const ScrollChat = () => {
@@ -69,12 +68,12 @@ const ScrollChat = () => {
             {c?.isLoader === "no" && (
               <img src={commonIcon.chatGeminiIcon} alt="avatar icon"></img>
             )}
-              <ReplyByGemini
-                gemini={loadText(c?.gemini)}
-                shouldAnimate={c?.newChat && !c?.gemini.includes("```") && lastElementId === c?.id}
-              />
+            <ReplyByGemini
+              gemini={loadText(c?.gemini)}
+              shouldAnimate={c?.newChat && !c?.gemini.includes("```") && lastElementId === c?.id}
+              isReady={c?.gemini?.length > 0 && c?.isLoader === "no"}
+            />
           </div>
-          {c?.gemini?.length > 0 && <CopyBtn data={c?.gemini} />}
         </div>
       ) : (
         navigate("/")

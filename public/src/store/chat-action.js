@@ -28,7 +28,14 @@ export const getRecentChat = () => {
   };
 };
 
+let controller;
+
+export const stopSendData = () => {
+  controller.abort();
+}
+
 export const sendChatData = (useInput) => {
+  controller = new AbortController();
   return (dispatch) => {
     dispatch(chatAction.chatStart({ useInput: useInput }));
 
@@ -37,6 +44,7 @@ export const sendChatData = (useInput) => {
     const url = `${SERVER_ENDPOINT}/gemini/api/chat`;
 
     fetch(url, {
+      signal: controller.signal,
       method: "POST",
       credentials: "include",
       headers: {
@@ -96,7 +104,7 @@ export const sendChatData = (useInput) => {
               useInput: {
                 user: useInput.user,
                 gemini:
-                  "<span>Rate Limit Exceeded. Please wait for one hour before trying again. Thank you for your patience.</span>",
+                  "Rate Limit Exceeded. Please wait for one hour before trying again. Thank you for your patience.",
                 isLoader: "no",
               },
             })
@@ -107,7 +115,7 @@ export const sendChatData = (useInput) => {
               useInput: {
                 user: useInput.user,
                 gemini:
-                  "<span>Oops! Something went wrong on our end. Please refresh the page and try again. If the issue persists, please contact us for assistance.</span>",
+                  "Oops, something went wrong. Please try again.",
                 isLoader: "no",
               },
             })

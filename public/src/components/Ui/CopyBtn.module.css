@@ -1,4 +1,4 @@
-.copy-icon {
+.copy-icon, .stop-icon {
   position: absolute;
   width: 35px;
   height: 35px;
@@ -13,13 +13,30 @@
   -webkit-user-select: none;
 }
 
-.copy-icon:hover {
+.copy-icon:hover, .stop-icon:hover {
   background-color: var(--prompt-bg-hover);
 }
 
 .copy-icon img {
   width: 18px;
   height: 18px;
+}
+
+.stop-icon img {
+  width: 26px;
+  height: 26px;
+}
+
+.stop-icon:hover::after {
+  content: "Stop";
+  position: absolute;
+  width: 40px;
+  font-size: 12px;
+  left: -45px;
+  color: var(--plus-icon-before-font-color);
+  background-color: var(--plus-icon-before-bg-color);
+  padding: 4px 5px;
+  border-radius: 5px;
 }
 
 .copy-icon-one:hover::after {

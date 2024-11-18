@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const inittalState = {
+const initialState = {
   chats: [],
   newChat: false,
   isLoader: false,
@@ -12,7 +12,7 @@ const inittalState = {
 
 const chatSlice = createSlice({
   name: "chat",
-  initialState: inittalState,
+  initialState: initialState,
   reducers: {
     loaderHandler(state) {
       state.isLoader = !state.isLoader;

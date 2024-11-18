@@ -6,6 +6,7 @@ import expandIcon from "./expand.png";
 import upArrowIcon from "./arrow.png";
 import moonIcon from "./moon.png";
 import copyIcon from "./copy.png";
+import stopIcon from "./stop.png";
 
 export const lightIcon = {
   plusIcon,
@@ -16,4 +17,5 @@ export const lightIcon = {
   upArrowIcon,
   moonIcon,
   copyIcon,
+  stopIcon,
 };

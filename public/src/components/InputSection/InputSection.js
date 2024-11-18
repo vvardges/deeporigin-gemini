@@ -1,7 +1,7 @@
 import styles from "./InputSection.module.css";
 import { themeIcon } from "../../asset";
-import { sendChatData } from "../../store/chat-action";
-import { useEffect, useState } from "react";
+import {sendChatData} from "../../store/chat-action";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
@@ -40,21 +40,21 @@ const InputSection = () => {
 
   const icon = themeIcon();
   return (
-    <div className={styles["input-main"]}>
-      <form onSubmit={onSubmitHandler}>
-        <input
-          onChange={userInputHandler}
-          autoComplete="off"
-          type="text"
-          placeholder="Enter a prompt here"
-          name="prompt"
-          value={userInput}
-        ></input>
-        <button type="submit">
-          <img src={icon.sendIcon} alt="send icon"></img>
-        </button>
-      </form>
-    </div>
+      <div className={styles["input-main"]}>
+        <form onSubmit={onSubmitHandler}>
+          <input
+              onChange={userInputHandler}
+              autoComplete="off"
+              type="text"
+              placeholder="Enter a prompt here"
+              name="prompt"
+              value={userInput}
+          ></input>
+          <button type="submit">
+            <img src={icon.sendIcon} alt="send icon"></img>
+          </button>
+        </form>
+      </div>
   );
 };
 
