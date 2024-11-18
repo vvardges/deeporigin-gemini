@@ -8,6 +8,7 @@ export const getRecentChat = () => {
 
     fetch(url, {
       method: "GET",
+      credentials: "include",
     })
       .then((response) => {
         if (!response.ok) {
@@ -37,6 +38,7 @@ export const sendChatData = (useInput) => {
 
     fetch(url, {
       method: "POST",
+      credentials: "include",
       headers: {
         "Content-Type": "application/json",
         "X-Api-Key": apiKey,
@@ -123,6 +125,7 @@ export const getChat = (chatHistoryId) => {
 
     fetch(url, {
       method: "POST",
+      credentials: "include",
       body: JSON.stringify({ chatHistoryId }),
       headers: {
         "Content-Type": "application/json",
