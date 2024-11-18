@@ -26,7 +26,7 @@ import publicRoutes from "./router/public.js";
 
 app.use("/gemini", publicRoutes);
 
-app.use((error, req, res, next) => {
+app.use((error, req, res) => {
   console.log(error);
   const status = error.statusCode || 500;
   const message = error.message;
@@ -37,7 +37,7 @@ app.use((error, req, res, next) => {
 
 mongoose
   .connect(MONGODB_URL)
-  .then((result) => {
+  .then(() => {
     app.listen(process.env.PORT || PORT_NO, () => {
       console.log(`Gemini server is running on port ${PORT_NO}`);
     });

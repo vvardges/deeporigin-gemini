@@ -20,7 +20,7 @@ h2 {
 
 @keyframes gradientAnimation {
   from {
-    width: 0%;
+    width: 0;
   }
   to {
     width: 100%;
@@ -57,9 +57,7 @@ h2 {
   background-size: 200% 100%;
   animation: gradientAnimation 2s ease;
   -webkit-box-orient: vertical;
-  display: -webkit-inline-box;
-  overflow: hidden;
-  -webkit-line-clamp: 1;
+  display: -webkit-box;
 }
 
 .text-section h2 {

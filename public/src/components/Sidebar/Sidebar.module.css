@@ -90,7 +90,7 @@
 .pluc-icon p {
   padding-left: 35px;
   -webkit-box-orient: vertical;
-  display: -webkit-inline-box;
+  display: -webkit-box;
   overflow: hidden;
   -webkit-line-clamp: 1;
 }
@@ -118,7 +118,7 @@
 
 .recent-chat p {
   -webkit-box-orient: vertical;
-  display: -webkit-inline-box;
+  display: -webkit-box;
   overflow: hidden;
   -webkit-line-clamp: 1;
 }

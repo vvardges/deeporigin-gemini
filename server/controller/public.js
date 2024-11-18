@@ -4,7 +4,7 @@ import { chatHistory } from "../model/chatHistory.js";
 import { GoogleGenerativeAI } from "@google/generative-ai";
 import { Error } from "mongoose";
 
-export const getGeminiHome = (req, res, next) => {
+export const getGeminiHome = (req, res) => {
   res.status(200).json({ message: "Welcome to Gemini Ai Api" });
 };
 
